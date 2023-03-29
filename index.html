@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gugugugugu</title>
+</head>
+<body>
+    <script>
+        let correctCount = 0;
+let incorrectCount = 0;
+
+for (let i = 0; i < 10; i++) {
+  const num1 = Math.ceil(Math.random() * 9);  // 1부터 9까지 랜덤한 숫자 생성
+  const num2 = Math.ceil(Math.random() * 9);  // 1부터 9까지 랜덤한 숫자 생성
+  const answer = num1 * num2;  // 정답 계산
+
+  const input = prompt(`${num1} x ${num2} = ?`);  // 사용자 입력 받기
+  if (input === null) {  // 사용자가 취소 버튼을 누르면 게임 종료
+    break;
+}
+
+  const guess = parseInt(input, 10);  // 입력값을 정수형으로 변환
+  if (guess === answer) {  // 정답일 경우
+    alert("정답입니다!");
+    correctCount++;
+  } else {  // 오답일 경우
+    alert(`틀렸습니다! 정답은 ${answer}입니다.`);
+    incorrectCount++;
+}
+}
+
+alert(`게임이 종료되었습니다. 정답: ${correctCount}개, 오답: ${incorrectCount}개`);
+    </script>
+</body>
+</html>
